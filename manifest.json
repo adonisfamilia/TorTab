@@ -2,11 +2,14 @@
   "manifest_version": 2,
   "name": "TorTab",
   "version": "0.1",
-
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["TorTab.js"]
+      "js": ["hello.js"]
     }
-  ]
+  ],
+  "background": {
+    "scripts": ["TorTab.js"]
+  },
+  "permissions": ["proxy"]
 }
