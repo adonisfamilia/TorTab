@@ -1,4 +1,12 @@
-browser.proxy.register("proxy.pac")
+// browser.proxy.register("proxy.pac")
+
+let createContext = browser.contextualIdentities.create(
+  {
+    name: "TorTab",
+    color: "purple",
+    icon: "fingerprint"
+  }
+).then(() => console.log('we did a thing'))
 
 browser.runtime.onMessage.addListener((message, sender) => {
   if (sender.url === browser.extension.getURL("proxy.pac")) {

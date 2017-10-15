@@ -11,5 +11,5 @@
   "background": {
     "scripts": ["TorTab.js"]
   },
-  "permissions": ["proxy"]
+  "permissions": ["proxy", "contextualIdentities"]
 }
