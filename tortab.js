@@ -17,7 +17,6 @@ async function createContainer(){
 createContainer()
 
 browser.webRequest.onBeforeRequest.addListener(async function (details) {
-    console.log('here')
     if (details.tabId !== browser.tabs.TAB_ID_NONE) {
         const tab = await browser.tabs.get(details.tabId)
         const setting = await browser.storage.local.get([tab.cookieStoreId])
