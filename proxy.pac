@@ -1,15 +1,9 @@
 function FindProxyForURL(url, host) {
-  const mess = [{
+  const msg = [{
         type: "socks",
         host: "localhost",
         port: 9050,
         proxyDNS: true
   }]
-  return mess
+  return msg
 }
-
-browser.runtime.onMessage.addListener((message) => {
-    if (message.enabled) {
-    browser.runtime.sendMessage("I'm enabled!");
-    }
-    });
