@@ -1,10 +1,11 @@
 function FindProxyForURL(url, host) {
-  return [{
-type: "socks",
-        host: host,
+  const mess = [{
+        type: "socks",
+        host: "localhost",
         port: 9050,
-        proxyDNS: true,
+        proxyDNS: true
   }]
+  return mess
 }
 
 browser.runtime.onMessage.addListener((message) => {
