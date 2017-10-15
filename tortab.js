@@ -2,16 +2,19 @@ async function createContainer(){
     const checkContainer = await browser.contextualIdentities.query({
         name: 'Tor'
     })
-    if(checkContainer.length === 0) {
-        const identity = await browser.contextualIdentities.create({
+    let identity = {}
+    if (checkContainer.length !== 0) {
+        identity = checkContainer[0]
+    } else {
+        identity = await browser.contextualIdentities.create({
             name: 'Tor',
             icon: 'fingerprint',
             color: 'purple'
         })
-        browser.storage.local.set({
-            [identity.cookieStoreId]: true
-        })
     }
+    browser.storage.local.set({
+        [identity.cookieStoreId]: true
+    })
 }
 
 createContainer()
